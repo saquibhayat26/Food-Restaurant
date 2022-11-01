@@ -1,21 +1,22 @@
-.signup {
+.Login {
   position: relative;
   width: 100vw;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(69, 163, 246);
+  background-color: #f9d03a;
 }
 
-.signup img {
+.Login img {
   position: absolute;
-  width: 70%;
+  width: 60%;
   height: 90%;
+  opacity: 0.8;
 }
 
-.signup__wrapper {
-  padding: 1rem;
+.Login__wrapper {
+  padding: 1.5rem;
   max-width: 80%;
   min-height: 70vh;
   position: absolute;
@@ -27,44 +28,43 @@
   box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.signup__top {
+.Login__top {
   width: 100%;
   text-align: center;
 }
 
-.signup__top h2 {
+.Login__top h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #fff;
+  color: rgb(31, 21, 21);
 }
-.signup__top p {
-  color: #ed4a09;
+.Login__top p {
+  color: #1c1816;
   letter-spacing: 1px;
   font-size: 18px;
 }
 
-.signup__center form {
+.Login__center {
+  min-width: 100%;
+}
+
+.Login__center form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 1rem;
 }
-.signup__center form > input {
+.Login__center form > input {
   height: 2.7rem;
   width: 100%;
   outline: none;
   padding: 8px;
   font-size: 16px;
   border: none;
-  color: #ed4a09;
+  color: #003bbd;
 }
 
-.signup__policy {
-  color: rgb(58, 49, 49);
-  font-size: 16px;
-}
-
-.signup__btn {
+.Login__btn {
   height: 2.7rem;
   width: 100%;
   background-color: #003bbd;
@@ -76,12 +76,12 @@
   transition: all 0.3s ease-out;
 }
 
-.signup__btn:hover {
+.Login__btn:hover {
   cursor: pointer;
   background-color: #285cce;
 }
 
-.signup__bottom {
+.Login__bottom {
   color: rgb(255, 255, 255);
   text-align: center;
 }
