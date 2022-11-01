@@ -22,7 +22,6 @@ const Items = () => {
         return response.json();
       })
       .then(function (myJson) {
-        console.log(myJson);
         setLocaldata(myJson);
       });
   };
@@ -31,7 +30,6 @@ const Items = () => {
   return (
     <div className="items">
       <div className="items__wrapper">
-        {" "}
         {localData && localData.map((item) => <Item item={item} />)}
       </div>
     </div>

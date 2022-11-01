@@ -5,7 +5,7 @@ import "./Item.css";
 const Item = ({ item }) => {
   return (
     <div className="item">
-      <img src={item.image} />
+      <img src={item.image} alt={item.name} />
       <p>{item.name}</p>
       <p>Price: Rs.{item.price}</p>
       <div className="item__btn">

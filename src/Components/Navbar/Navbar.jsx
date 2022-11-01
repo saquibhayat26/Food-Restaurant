@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 
+import { Link } from "react-router-dom";
+
 import cart from "../../assets/shopping_cart.png";
 import Cart from "../Cart/Cart";
 
@@ -23,9 +25,16 @@ const Navbar = () => {
         >
           <path d="M22 18h-4V4h-4v14h-4V4H6v14c0 4.25 3.32 7.69 7.5 7.95V44h5V25.95c4.18-.26 7.5-3.7 7.5-7.95V4h-4v14zm10-6v16h5v16h5V4c-5.52 0-10 4.48-10 8z" />
         </svg>
-        <p>Food's Restaurant</p>
+        <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+          <p>Food's Restaurant</p>
+        </Link>
       </div>
+
       <div className="navbar__right">
+        <Link to={"/login"} style={{ textDecoration: "none" }}>
+          <p className="login">LOGIN</p>
+        </Link>
+
         <img src={cart} alt="cart" onClick={handleOpen} />
         <span>0</span>
       </div>

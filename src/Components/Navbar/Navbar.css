@@ -29,7 +29,15 @@
 
 .navbar__right {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   padding-right: 1rem;
+  cursor: pointer;
+}
+
+.login {
+  color: #fff;
   cursor: pointer;
 }
 

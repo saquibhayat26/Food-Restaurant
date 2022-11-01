@@ -1,6 +1,8 @@
 import React from "react";
 import "./Login.css";
 
+import { Link } from "react-router-dom";
+
 import vector1 from "./../../assets/Vector1.png";
 
 const Login = () => {
@@ -13,7 +15,7 @@ const Login = () => {
           <p>Login to your account</p>
         </div>
         <div className="Login__center">
-          <form action="submit">
+          <form>
             <input type={"text"} placeholder="Enter email" />
 
             <input type={"password"} placeholder="Enter password" />
@@ -26,7 +28,13 @@ const Login = () => {
             <span
               style={{ cursor: "pointer", color: "#ed2f09", fontWeight: 600 }}
             >
-              SignUp
+              <Link
+                to={"/signup"}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {" "}
+                SignUp
+              </Link>
             </span>
           </p>
         </div>
