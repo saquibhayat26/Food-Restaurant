@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 import cart from "../../assets/shopping_cart.png";
+import Cart from "../Cart/Cart";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -19,9 +26,14 @@ const Navbar = () => {
         <p>Food's Restaurant</p>
       </div>
       <div className="navbar__right">
-        <img src={cart} alt="cart" />
+        <img src={cart} alt="cart" onClick={handleOpen} />
         <span>0</span>
       </div>
+      {open && (
+        <div className="navbar__cart centered">
+          <Cart />
+        </div>
+      )}
     </div>
   );
 };

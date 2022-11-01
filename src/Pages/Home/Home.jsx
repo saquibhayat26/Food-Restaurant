@@ -4,6 +4,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Navbar from "../../Components/Navbar/Navbar";
 import Menu from "../../Components/HomeMenu/Menu";
+import Items from "../../Components/Items/Items";
 
 const Home = () => {
   return (
@@ -11,7 +12,8 @@ const Home = () => {
       {/* <Signup /> */}
       {/* <Login /> */}
       <Navbar />
-      <Menu />
+      {/* <Menu /> */}
+      <Items />
     </div>
   );
 };

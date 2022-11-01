@@ -19,6 +19,7 @@
   text-align: center;
   font-weight: 500;
   color: #2c2c2e;
+  text-transform: capitalize;
 }
 
 .menu__wrapper button {
