@@ -5,17 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(69, 163, 246);
+  background-color: #3f51b5;
 }
 
 .signup img {
   position: absolute;
   width: 70%;
   height: 90%;
+  opacity: 0.4;
 }
 
 .signup__wrapper {
-  padding: 1rem;
+  padding: 1.5rem;
   max-width: 80%;
   min-height: 70vh;
   position: absolute;
@@ -38,9 +39,13 @@
   color: #fff;
 }
 .signup__top p {
-  color: #ed4a09;
+  color: #ffffff;
   letter-spacing: 1px;
   font-size: 18px;
+}
+
+.signup__center {
+  min-width: 100%;
 }
 
 .signup__center form {
@@ -78,7 +83,7 @@
 
 .signup__btn:hover {
   cursor: pointer;
-  background-color: #285cce;
+  background-color: #002677;
 }
 
 .signup__bottom {

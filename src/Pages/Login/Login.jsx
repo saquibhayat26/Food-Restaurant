@@ -1,12 +1,12 @@
 import React from "react";
 import "./Login.css";
 
-import vector2 from "./../../assets/Vector2.png";
+import vector1 from "./../../assets/Vector1.png";
 
 const Login = () => {
   return (
     <div className="Login">
-      <img src={vector2} alt="vector2" />
+      <img src={vector1} alt="vector1" />
       <div className="Login__wrapper">
         <div className="Login__top">
           <h2>Welcome To Food's Restaurant</h2>
@@ -23,7 +23,11 @@ const Login = () => {
         <div className="Login__bottom">
           <p>
             Not Registered?{" "}
-            <span style={{ cursor: "pointer", color: "#0937ed" }}>SignUp</span>
+            <span
+              style={{ cursor: "pointer", color: "#ed2f09", fontWeight: 600 }}
+            >
+              SignUp
+            </span>
           </p>
         </div>
       </div>

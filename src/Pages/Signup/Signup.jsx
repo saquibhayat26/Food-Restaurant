@@ -21,12 +21,13 @@ const Signup = () => {
           </form>
           <p className="signup__policy">
             By continuing, you agree to our{" "}
-            <span style={{ cursor: "pointer", color: "#2409ed" }}>
+            <span style={{ cursor: "pointer", color: "#c9c2f6" }}>
               {" "}
               Terms of Service
             </span>{" "}
+            <br />
             and{" "}
-            <span style={{ cursor: "pointer", color: "#2409ed" }}>
+            <span style={{ cursor: "pointer", color: "#c9c2f6" }}>
               Privacy policy
             </span>
             .
@@ -35,7 +36,11 @@ const Signup = () => {
         <div className="signup__bottom">
           <p>
             Already a member?{" "}
-            <span style={{ cursor: "pointer", color: "#ed4a09" }}>Log in</span>
+            <span
+              style={{ cursor: "pointer", color: "#ed2f09", fontWeight: 600 }}
+            >
+              Log in
+            </span>
           </p>
         </div>
       </div>

@@ -5,14 +5,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f9d03a;
+  background-color: #3f51b5;
 }
 
 .Login img {
   position: absolute;
-  width: 60%;
+  width: 70%;
   height: 90%;
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 .Login__wrapper {
@@ -36,10 +36,10 @@
 .Login__top h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  color: rgb(31, 21, 21);
+  color: rgb(255, 255, 255);
 }
 .Login__top p {
-  color: #1c1816;
+  color: #ffffff;
   letter-spacing: 1px;
   font-size: 18px;
 }
@@ -78,7 +78,7 @@
 
 .Login__btn:hover {
   cursor: pointer;
-  background-color: #285cce;
+  background-color: #002677;
 }
 
 .Login__bottom {
