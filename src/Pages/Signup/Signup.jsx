@@ -5,8 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 
-import vector1 from "./../../assets/Vector1.png";
-
 const Signup = () => {
   const {
     register,
@@ -23,7 +21,6 @@ const Signup = () => {
 
   return (
     <div className="signup">
-      <img src={vector1} alt="signup" />
       <div className="signup__wrapper" alt="vector1">
         <div className="signup__top">
           <h2>Welcome To Food's Restaurant</h2>

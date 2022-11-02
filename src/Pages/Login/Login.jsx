@@ -3,10 +3,6 @@ import "./Login.css";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import vector1 from "./../../assets/Vector1.png";
-
-import { useForm } from "react-hook-form";
-
 const Login = ({ signup, setSignup }) => {
   const navigate = useNavigate();
 
@@ -18,7 +14,6 @@ const Login = ({ signup, setSignup }) => {
 
   return (
     <div className="Login">
-      <img src={vector1} alt="vector1" />
       <div className="Login__wrapper">
         <div className="Login__top">
           <h2>Welcome To Food's Restaurant</h2>
