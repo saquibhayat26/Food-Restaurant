@@ -17,7 +17,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    window.alert(data);
+    console.log(data);
     navigate("/login");
   };
 
