@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 
@@ -7,6 +8,7 @@ import cart from "../../assets/shopping_cart.png";
 import Cart from "../Cart/Cart";
 
 const Navbar = () => {
+  const data = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -36,11 +38,11 @@ const Navbar = () => {
         </Link>
 
         <img src={cart} alt="cart" onClick={handleOpen} />
-        <span>0</span>
+        <span>{data ? data.items.length : 0}</span>
       </div>
       {open && (
         <div className="navbar__cart centered">
-          <Cart />
+          <Cart open={open} setOpen={setOpen} />
         </div>
       )}
     </div>

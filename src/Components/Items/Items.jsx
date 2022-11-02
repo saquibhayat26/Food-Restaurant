@@ -4,7 +4,7 @@ import Item from "../Item/Item";
 import "./Items.css";
 
 const Items = () => {
-  const [localData, setLocaldata] = useState("");
+  const [localData, setLocaldata] = useState(null);
 
   useEffect(() => {
     getData();
@@ -18,19 +18,20 @@ const Items = () => {
       },
     })
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(function (myJson) {
-        setLocaldata(myJson);
+        const productData = JSON.stringify(myJson);
+        const data = JSON.parse(productData);
+        setLocaldata(data);
       });
   };
-  console.log(localData);
 
   return (
     <div className="items">
       <div className="items__wrapper">
-        {localData && localData.map((item) => <Item item={item} />)}
+        {localData &&
+          localData.map((item, index) => <Item key={index} item={item} />)}
       </div>
     </div>
   );
