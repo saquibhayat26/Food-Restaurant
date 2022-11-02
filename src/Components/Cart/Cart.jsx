@@ -4,8 +4,10 @@ import "./Cart.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../../redux/features/cartSlice";
+import { useNavigate } from "react-router-dom";
 
-const Cart = ({ open, setOpen }) => {
+const Cart = ({ open, setOpen, setCartTotal }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart);
 
@@ -13,16 +15,15 @@ const Cart = ({ open, setOpen }) => {
 
   const calculateTotal = () => {
     let total = 0;
-    {
-      cartData.items.length > 0 &&
-        cartData.items.forEach((item) => {
-          if (item.productQuantity === 1) {
-            total += item.price * 1;
-          } else {
-            total += item.price * item.productQuantity * 1;
-          }
-        });
-    }
+
+    cartData.items.forEach((item) => {
+      if (item.productQuantity === 1) {
+        total += item.price * 1;
+      } else {
+        total += item.price * item.productQuantity * 1;
+      }
+    });
+
     setTotal(total);
   };
 
@@ -40,6 +41,11 @@ const Cart = ({ open, setOpen }) => {
 
   const handleClick = () => {
     setOpen(!open);
+  };
+  const handleCheckout = () => {
+    setOpen(!open);
+    navigate("/success");
+    setCartTotal(0);
   };
 
   return (
@@ -68,13 +74,14 @@ const Cart = ({ open, setOpen }) => {
         <p>Total (INR): {total}</p>
       </div>
       <div className="cart__bottom">
-        <div>
+        <div onClick={handleCheckout}>
           <Button
             text={"SAVE AND CHECKOUT"}
             bgColor={"#3f51b5"}
             color={"#fff"}
           />
         </div>
+
         <div onClick={handleClick}>
           <Button text={"CANCEL"} bgColor={"#c6c6c6"} color={"#3f51b5"} />
         </div>

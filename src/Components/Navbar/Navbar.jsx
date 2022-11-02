@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 
 import cart from "../../assets/shopping_cart.png";
 import Cart from "../Cart/Cart";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const data = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
+  const [total, setCartTotal] = useState(0);
+
+  useEffect(() => {
+    setCartTotal(data.items.length);
+  }, [data]);
 
   const handleOpen = () => {
     setOpen(!open);
@@ -38,11 +44,11 @@ const Navbar = () => {
         </Link>
 
         <img src={cart} alt="cart" onClick={handleOpen} />
-        <span>{data ? data.items.length : 0}</span>
+        <span>{total}</span>
       </div>
       {open && (
         <div className="navbar__cart centered">
-          <Cart open={open} setOpen={setOpen} />
+          <Cart open={open} setOpen={setOpen} setCartTotal={setCartTotal} />
         </div>
       )}
     </div>
