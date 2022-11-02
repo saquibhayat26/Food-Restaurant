@@ -7,13 +7,16 @@ import Items from "./Components/Items/Items";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import CheckoutSuccess from "./Pages/CheckoutSuccess/CheckoutSuccess";
+import { useState } from "react";
 
 function App() {
+  const [signup, setSignup] = useState(true);
+
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={signup ? <Signup /> : <Home />} />
           <Route
             exact
             path="/product"
@@ -24,7 +27,11 @@ function App() {
               </>
             }
           />
-          <Route exact path="/login" element={<Login />} />
+          <Route
+            exact
+            path="/login"
+            element={<Login signup={signup} setSignup={setSignup} />}
+          />
           <Route exact path="/signup" element={<Signup />} />
           <Route
             exact

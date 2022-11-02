@@ -1,11 +1,21 @@
 import React from "react";
 import "./Login.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import vector1 from "./../../assets/Vector1.png";
 
-const Login = () => {
+import { useForm } from "react-hook-form";
+
+const Login = ({ signup, setSignup }) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSignup(!signup);
+    navigate("/");
+  };
+
   return (
     <div className="Login">
       <img src={vector1} alt="vector1" />
@@ -15,11 +25,13 @@ const Login = () => {
           <p>Login to your account</p>
         </div>
         <div className="Login__center">
-          <form>
-            <input type={"text"} placeholder="Enter email" />
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <input type={"email"} placeholder="Enter email" required />
 
-            <input type={"password"} placeholder="Enter password" />
-            <button className="Login__btn">Login</button>
+            <input type={"password"} placeholder="Enter password" required />
+            <button className="Login__btn" type="submit">
+              Login
+            </button>
           </form>
         </div>
         <div className="Login__bottom">

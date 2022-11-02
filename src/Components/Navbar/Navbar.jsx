@@ -13,8 +13,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [total, setCartTotal] = useState(0);
 
+  // const [cartLength, setCartLength] = useState(0);
+
   useEffect(() => {
     setCartTotal(data.items.length);
+    // setCartLength(data.items.length);
   }, [data]);
 
   const handleOpen = () => {
@@ -37,15 +40,12 @@ const Navbar = () => {
           <p>Food's Restaurant</p>
         </Link>
       </div>
-
-      <div className="navbar__right">
-        <Link to={"/login"} style={{ textDecoration: "none" }}>
-          <p className="login">LOGIN</p>
-        </Link>
-
-        <img src={cart} alt="cart" onClick={handleOpen} />
-        <span>{total}</span>
-      </div>
+      {total > 0 && (
+        <div className="navbar__right">
+          <img src={cart} alt="cart" onClick={handleOpen} />
+          <span>{total}</span>
+        </div>
+      )}
       {open && (
         <div className="navbar__cart centered">
           <Cart open={open} setOpen={setOpen} setCartTotal={setCartTotal} />

@@ -21,14 +21,18 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart(state, action) {
-      const filterCartItems = state.items.filter((item) => {
-        if (item.id === action.payload && item.productQuantity > 1) {
-          return (item.productQuantity -= 1);
-        } else {
-          return item.id !== action.payload;
-        }
-      });
-      state.items = filterCartItems;
+      if (action.payload === 0) {
+        state.items.splice(0, state.items.length);
+      } else {
+        const filterCartItems = state.items.filter((item) => {
+          if (item.id === action.payload && item.productQuantity > 1) {
+            return (item.productQuantity -= 1);
+          } else {
+            return item.id !== action.payload;
+          }
+        });
+        state.items = filterCartItems;
+      }
     },
   },
 });

@@ -1,11 +1,26 @@
 import React from "react";
 import "./Signup.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { useForm } from "react-hook-form";
 
 import vector1 from "./../../assets/Vector1.png";
 
 const Signup = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    window.alert(data);
+    navigate("/login");
+  };
+
   return (
     <div className="signup">
       <img src={vector1} alt="signup" />
@@ -15,11 +30,34 @@ const Signup = () => {
           <p>create a new account</p>
         </div>
         <div className="signup__center">
-          <form>
-            <input type={"text"} placeholder="Enter Full name" />
-            <input type={"email"} placeholder="Enter email" />
-            <input type={"password"} placeholder="Create New password" />
-            <button className="signup__btn">signup</button>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              type={"text"}
+              placeholder="Enter Full name"
+              {...register("fullName", { required: true, maxLength: 14 })}
+            />
+            {errors.fullName && <p>Full name should be less than 8 chracter</p>}
+            <input
+              type={"email"}
+              placeholder="Enter email"
+              {...register("email", {
+                required: true,
+                pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+              })}
+            />
+            {errors.email && <p>Please check the email</p>}
+            <input
+              type={"password"}
+              placeholder="Create New password (min 8 - max 14 || Abcd1234)"
+              {...register("password", {
+                required: true,
+                pattern: /^[A-Za-z]\w{7,14}$/,
+              })}
+            />
+            {errors.password && <p>Please check the Password</p>}
+            <button type="submit" className="signup__btn">
+              signup
+            </button>
           </form>
           <p className="signup__policy">
             By continuing, you agree to our{" "}

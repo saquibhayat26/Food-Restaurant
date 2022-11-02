@@ -44,6 +44,7 @@ const Cart = ({ open, setOpen, setCartTotal }) => {
   };
   const handleCheckout = () => {
     setOpen(!open);
+    dispatch(removeFromCart(0));
     navigate("/success");
     setCartTotal(0);
   };
